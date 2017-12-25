@@ -1,7 +1,15 @@
-// import React from 'react';
-// import './App.css';
-// const App = () => {
-//   return (<div className="App"> Hello World! </div> )
-// };
-//
-// export default App;
+
+import React from 'react';
+import HelloWorld from './HelloWorld';
+import './HelloWorld.css';
+
+
+const App = () => {
+  return (
+    <div className="App">
+      <HelloWorld/>
+    </div>
+  )
+};
+
+export default App;
