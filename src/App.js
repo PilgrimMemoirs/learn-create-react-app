@@ -7,7 +7,8 @@ import './HelloWorld.css';
 const App = () => {
   return (
     <div className="App">
-      <HelloWorld/>
+      <HelloWorld name="Octo"/>
+      <HelloWorld name="Amper"/>
     </div>
   )
 };
