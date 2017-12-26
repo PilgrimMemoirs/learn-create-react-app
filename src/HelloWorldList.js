@@ -5,13 +5,21 @@ import HelloWorld from './HelloWorld';
 
 
 class HelloWorldList extends Component {
+  constructor(props){
+    super(props);
+    this.state = {greetings: ['Amper', 'Octo', 'Jamie']}
+  }
   render() {
     return (
       <div className="HelloWorldList">
-        <HelloWorld name="Amper"/>
-        <HelloWorld name="Octo"/>
+        {this.renderGreetings()}
       </div>
     )
+  }
+  renderGreetings(){
+    return this.state.greetings.map(name => (
+      <HelloWorld key={name} name={name}/>
+    ))
   }
 }
 
