@@ -7,6 +7,9 @@ class AddGreeter extends Component {
     this.state = {greetingName: ''};
     this.handleUpdate = this.handleUpdate.bind(this);
   }
+  handleUpdate(event){
+    this.setState({greetingName: event.target.value })
+  }
   render(){
     return (
       <div className="AddGreeter">
