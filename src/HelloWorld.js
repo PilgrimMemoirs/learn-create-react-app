@@ -6,7 +6,11 @@ class HelloWorld extends Component {
     super(props);
     this.state = {greeting: 'Hello'};
     this.frenchify = this.frenchify.bind(this);
+    this.removeGreeting = this.removeGreeting.bind(this);
   }//constructor enabled
+  removeGreeting(){
+    this.props.removeGreeting(this.props.name);
+  }
   render () {
     return (
       <div className="HelloWorld">
