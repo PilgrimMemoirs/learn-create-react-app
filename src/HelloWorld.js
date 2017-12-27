@@ -16,7 +16,7 @@ class HelloWorld extends Component {
       <div className="HelloWorld">
         <h2>{this.state.greeting} {this.props.name}!</h2>
         <button onClick={this.frenchify}> Frenchify! </button>
-        <br>
+        <br/>
         <button onClick={this.removeGreeting}>Remove Me!</button>
       </div>
     );
