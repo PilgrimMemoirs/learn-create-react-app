@@ -10,6 +10,7 @@ class HelloWorldList extends Component {
     super(props);
     this.state = {greetings: ['Amper', 'Octo', 'Jamie']}
     this.addGreeting = this.addGreeting.bind(this);
+    this.removeGreeting = this.removeGreeting.bind(this);
   }
   addGreeting(newName) {
     this.setState({ greetings: [...this.state.greetings, newName] });
