@@ -25,7 +25,7 @@ class HelloWorldList extends Component {
     ))
   }
   removeGreeting(removeName) {
-    const filteredGreeting = this.state.greetings.filter(name => {
+    const filteredGreetings = this.state.greetings.filter(name => {
       return name !== removeName;
     });
     this.setState({ greetings: filteredGreetings });
