@@ -19,6 +19,12 @@ class HelloWorldList extends Component {
       <HelloWorld key={name} name={name}/>
     ))
   }
+  removeGreeting(removeName) {
+    const filteredGreeting = this.state.greetings.filter(name => {
+      return name !== removeName;
+    });
+    this.setState({ greetings: filteredGreetings });
+  }
   render() {
     return (
       <div className="HelloWorldList">
