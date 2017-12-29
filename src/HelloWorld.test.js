@@ -24,4 +24,8 @@ describe(HelloWorld, () => {
     expect(component.text()).toContain(name);
   });
 
+  it('modifies the greeting when frenchify button is clicked', () => {
+    
+  });
+
 });
