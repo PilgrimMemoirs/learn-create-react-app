@@ -11,4 +11,13 @@ describe(HelloWorld, () => {
   const component = shallow(
     <HelloWorld name={name} removeGreeting={mockRemoveGreeting}/>
   )
+
+  it ('renders and matches our snapshot' () => {
+    const component = renderer.create(
+      <HelloWorld name="Person" />
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
 });
