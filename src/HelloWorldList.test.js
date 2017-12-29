@@ -10,4 +10,12 @@ describe (HelloWorldList, () => {
   const component = shallow(
     <HelloWorldList />
   );
+
+  it('renders and matches our snapshot', () => {
+    const component = renderer.create(
+      <HelloWorldList />
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  })
 });
