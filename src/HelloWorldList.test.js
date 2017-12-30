@@ -37,5 +37,14 @@ describe (HelloWorldList, () => {
     expect(after).toBeGreaterThan(before);
   });
 
-  
+  it('removes a greeting from the lisdt when the remove greeting function is called', () => {
+    const before = component.find(HelloWorld).length;
+    const removeMe = component.state('greetings')[0];
+    component.instance().removeGreeting(removeMe);
+    component.update();
+
+    const after = component.find(HelloWorld).length;
+    expect(after).toBeLessThan(before);
+  });
+
 });
