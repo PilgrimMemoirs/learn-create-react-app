@@ -17,4 +17,14 @@ describe(AddGreeter, () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('contains the form', () => {
+    expect(component.find('input')).toHaveLength(1);
+    expect(component.find('button')).toHaveLength(1);
+  });
+
+  it('calls the passed in addGreeting function when add button is clicked', () => {
+    component.find('button').simulate('click');
+    expect(mockAddGreeting).toBeCalled();
+  });
 });
