@@ -33,4 +33,12 @@ describe(AddGreeter, () => {
     component.instance().handleUpdate({ target: { value: updateKey }});
     expect(component.state('greetingName')).toEqual(updateKey);
   });
+
+  it('blanks out the greetingName when the button is clicked', () => {
+    const updateKey = 'a';
+    component.instance().handleUpdate({ target: { value: updateKey}});
+    expect(component.state('greetingName')).toEqual(updateKey);
+    component.find('button').simulate('click');
+    expect(component.state('greetingName')).toHaveLength(0)
+  })
 });
