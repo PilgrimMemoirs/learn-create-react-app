@@ -28,4 +28,14 @@ describe (HelloWorldList, () => {
     const greetings = component.state('greetings').length;
     expect(helloWorlds).toEqual(greetings);
   })
+
+  it('adds another greeting when the add greeting function is called', () => {
+    const before = component.find(HelloWorld).length;
+    component.instance().addGreeting('Sample');
+    component.update();
+    const after = component.find(HelloWorld).length;
+    expect(after).toBeGreaterThan(before);
+  });
+
+  
 });
