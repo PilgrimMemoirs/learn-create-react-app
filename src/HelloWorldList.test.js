@@ -18,4 +18,14 @@ describe (HelloWorldList, () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   })
+
+  it('contains an AddGreeter subcomponent', () => {
+    expect(component.find(AddGreeter)).toHaveLength(1);
+  })
+
+  it('contains the same number of HelloWorld components as greetings', () => {
+    const helloWorlds = component.find(HelloWorld).length;
+    const greetings = component.state('greetings').length;
+    expect(helloWorlds).toEqual(greetings);
+  })
 });
