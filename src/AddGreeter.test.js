@@ -27,4 +27,10 @@ describe(AddGreeter, () => {
     component.find('button').simulate('click');
     expect(mockAddGreeting).toBeCalled();
   });
+
+  it('updates the form when keys are pressed', () => {
+    const updateKey = 'foo';
+    component.instance().handleUpdate({ target: { value: updateKey }});
+    expect(component.state('greetingName')).toEqual(updateKey);
+  });
 });
