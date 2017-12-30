@@ -10,4 +10,11 @@ describe(AddGreeter, () => {
     <AddGreeter addGreeting={mockAddGreeting}/>
   );
 
+  it('renders and matches our snapshot', () => {
+    const component = renderer.create(
+      <AddGreeter />
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
